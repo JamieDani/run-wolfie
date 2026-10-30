@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'pages/games_page.dart';
+import 'pages/map_page.dart';
+
 void main() {
   runApp(const RunWolfieApp());
 }
@@ -49,28 +52,6 @@ class _HomeShellState extends State<HomeShell> {
           NavigationDestination(icon: Icon(Icons.sports_esports_outlined), label: ''),
         ],
       ),
-    );
-  }
-}
-
-class MapPage extends StatelessWidget {
-  const MapPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('This page will show the map.'),
-    );
-  }
-}
-
-class GamesPage extends StatelessWidget {
-  const GamesPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('This page will show minigame selection and stats.'),
     );
   }
 }

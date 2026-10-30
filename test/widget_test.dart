@@ -12,9 +12,27 @@ void main() {
     await tester.tap(find.byIcon(Icons.sports_esports_outlined));
     await tester.pumpAndSettle();
 
-    expect(
-      find.text('This page will show minigame selection and stats.'),
-      findsOneWidget,
-    );
+    for (final title in ['game1', 'game2', 'game3', 'game4']) {
+      expect(find.text(title), findsOneWidget);
+    }
+  });
+
+  testWidgets('game opens full screen and returns on back', (tester) async {
+    await tester.pumpWidget(const RunWolfieApp());
+    await tester.tap(find.byIcon(Icons.sports_esports_outlined));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('game2'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('game2 goes here.'), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing);
+
+    await tester.tap(find.byType(BackButton));
+    await tester.pumpAndSettle();
+
+    expect(find.text('game2 goes here.'), findsNothing);
+    expect(find.byType(NavigationBar), findsOneWidget);
+    expect(find.text('game1'), findsOneWidget);
   });
 }

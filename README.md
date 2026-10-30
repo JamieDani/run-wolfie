@@ -76,6 +76,16 @@ Setting up a simulator:
 
 It may take a couple minutes to start up for the first time (maybe 10-15mins max) but you should end up with a bare bones Flutter app with one tab for the map and one for the minigames. Yay!
 
+## Adding a minigame
+
+Each minigame lives in its own folder under `lib/games/`, and the minigames tab makes one button per folder.
+
+1. Copy an existing folder, e.g. `lib/games/game1` → `lib/games/my_game` (folder names must be lowercase_with_underscores).
+2. In `my_game/game.dart`, change the `title` and rename/build out the page widget. Keep the top-level `minigame` variable — that's what the generator looks for.
+3. Run `dart run tool/generate_games.dart`. This rewrites `lib/games/games.g.dart` (don't edit that file by hand) and the new button shows up.
+
+Each game page is its own `Scaffold`, so it covers the whole screen; the back arrow returns to the minigames tab.
+
 Below are is auto generated text for new flutter projects that you may find useful
 ---
 
