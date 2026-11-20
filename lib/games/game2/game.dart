@@ -2,18 +2,32 @@ import 'package:flutter/material.dart';
 
 import '../minigame.dart';
 
-final minigame = Minigame(title: 'game2', builder: (_) => const Game2Page());
+final minigame = Minigame(title: 'Wordle', builder: (_) => const WordlePage());
 
-class Game2Page extends StatelessWidget {
-  const Game2Page({super.key});
+class WordlePage extends StatelessWidget {
+  const WordlePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('game2')),
+      backgroundColor: const Color(0xFF121213),
+      appBar: AppBar(
+        title: const Text('Wordle'),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.white,
+      ),
       body: const Center(
-        child: Text('game2 goes here.'),
+        child: Text(
+          'WORDLE',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 4,
+          ),
+        ),
       ),
     );
   }
 }
+
