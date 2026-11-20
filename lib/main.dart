@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'wolfie_page.dart';
 
 import 'pages/games_page.dart';
 import 'pages/map_page.dart';
@@ -55,3 +56,34 @@ class _HomeShellState extends State<HomeShell> {
     );
   }
 }
+<<<<<<< Updated upstream
+=======
+
+class MapPage extends StatelessWidget {
+  const MapPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('This page will show the map.'),
+    );
+  }
+}
+
+class GamesPage extends StatelessWidget {
+  const GamesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   return Center(
+      child: FilledButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const WolfiePage()),
+        ),
+        child: const Text('Play Wolfie Possession'),
+      ),
+    );
+  }
+}
+>>>>>>> Stashed changes
